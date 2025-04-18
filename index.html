@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Amanda 💘</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      font-family: 'Brush Script MT', cursive;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 100px;
+      font-size: 3.5em;
+      text-shadow: 2px 2px 4px #00000055;
+    }
+
+    p {
+      font-size: 1.5em;
+      margin: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-shadow: 1px 1px 3px #00000044;
+    }
+
+    .corazon {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: flotar 10s infinite ease-in;
+      opacity: 0.8;
+    }
+
+    .corazon::before,
+    .corazon::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .corazon::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .corazon::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes flotar {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Amanda, eres mi universo 🌌</h1>
+  <p>Desde que llegaste a mi vida, los días brillan más, el aire huele a magia, y mi corazón late solo por ti. Te amo con cada estrella del cielo y cada latido de mi alma. 💖</p>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    // Crear corazones flotando
+    for (let i = 0; i < 50; i++) {
+      let c = document.createElement("div");
+      c.className = "corazon";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.top = Math.random() * 100 + "vh";
+      c.style.animationDuration = (5 + Math.random() * 5) + "s";
+      c.style.background = ["#ff4d6d", "#ff6b81", "#ff94b1", "#ffb3c6"][Math.floor(Math.random() * 4)];
+      document.body.appendChild(c);
+    }
+  </script>
+
+</body>
+</html>
